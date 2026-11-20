@@ -1,0 +1,2613 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>
+      TOMAコンサルタンツグループ様 AI活用支援のご提案｜株式会社コミクス
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #032642; /* TOMAの紺 */
+        --ink: #0d2236;
+        --sub: #3b4f63;
+        --paper: #f3f6f8;
+        --card: #ffffff;
+        --band1: #dbe5ef;
+        --band2: #b4c8dc;
+        --wood: #a8721f; /* 年輪の木肌 */
+        --wood-soft: #f5ead6;
+        --gold: #e3b667;
+        --leaf: #17694c;
+        --leaf-soft: #e2f1ea;
+        --line: #c3cfdb;
+        --mincho:
+          "Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", serif;
+        --gothic:
+          "Zen Kaku Gothic New", "Hiragino Sans", "Noto Sans JP", "Yu Gothic",
+          sans-serif;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--gothic);
+        font-size: 18px;
+        line-height: 1.85;
+        font-feature-settings: "palt";
+      }
+      img,
+      svg {
+        max-width: 100%;
+        height: auto;
+      }
+      a {
+        color: var(--navy);
+        text-underline-offset: 3px;
+      }
+      a:focus-visible,
+      button:focus-visible,
+      input:focus-visible,
+      select:focus-visible {
+        outline: 3px solid var(--wood);
+        outline-offset: 3px;
+      }
+      .wrap {
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 28px;
+      }
+      .num {
+        font-family: var(--mincho);
+        font-variant-numeric: tabular-nums;
+        font-weight: 800;
+        letter-spacing: 0.01em;
+      }
+      .tag-est {
+        display: inline-block;
+        font-size: 14px;
+        font-weight: 900;
+        letter-spacing: 0.06em;
+        color: #fff;
+        background: var(--wood);
+        padding: 2px 10px;
+        border-radius: 3px;
+        vertical-align: middle;
+        margin-right: 8px;
+        line-height: 1.6;
+      }
+      .note {
+        font-size: 16px;
+        color: var(--sub);
+        line-height: 1.75;
+      }
+
+      /* 目次 */
+      .toc {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: var(--navy);
+      }
+      .toc ul {
+        list-style: none;
+        margin: 0 auto;
+        padding: 0 20px;
+        max-width: 1120px;
+        display: flex;
+        gap: 4px;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+      .toc ul::-webkit-scrollbar {
+        display: none;
+      }
+      .toc a {
+        display: block;
+        padding: 12px 14px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 700;
+        white-space: nowrap;
+        border-bottom: 3px solid transparent;
+      }
+      .toc a:hover {
+        border-bottom-color: var(--gold);
+      }
+
+      /* 表紙 */
+      .cover {
+        padding: 60px 0 56px;
+        border-bottom: 1px solid var(--line);
+      }
+      .doc-label {
+        display: inline-flex;
+        gap: 14px;
+        align-items: center;
+        font-size: 15px;
+        font-weight: 700;
+        color: var(--navy);
+        letter-spacing: 0.14em;
+      }
+      .doc-label::before {
+        content: "";
+        width: 44px;
+        height: 3px;
+        background: var(--wood);
+      }
+      .addressee {
+        margin: 24px 0 0;
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 1.7;
+      }
+      .addressee b {
+        display: block;
+        font-family: var(--mincho);
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+      }
+      h1 {
+        font-family: var(--mincho);
+        font-weight: 800;
+        font-size: clamp(34px, 5vw, 64px);
+        line-height: 1.36;
+        letter-spacing: 0.02em;
+        margin: 28px 0 22px;
+        color: var(--navy);
+      }
+      h1 em {
+        font-style: normal;
+        background: linear-gradient(transparent 68%, #edd29b 68%);
+      }
+      .lead {
+        font-size: 20px;
+        line-height: 1.95;
+        margin: 0;
+        max-width: 42em;
+      }
+      .from {
+        margin-top: 22px;
+        font-size: 16px;
+        color: var(--sub);
+        font-weight: 500;
+      }
+
+      /* 粗利の式（この資料の背骨） */
+      .formula {
+        margin-top: 44px;
+        background: var(--navy);
+        border-radius: 6px;
+        padding: 30px 32px 28px;
+        color: #fff;
+      }
+      .formula-cap {
+        margin: 0 0 18px;
+        font-size: 16px;
+        font-weight: 700;
+        color: #dbe5ef;
+      }
+      .formula-row {
+        display: grid;
+        grid-template-columns:
+          auto auto minmax(0, 1fr) auto minmax(0, 1fr)
+          auto minmax(0, 1fr) auto minmax(0, 1fr);
+        gap: 14px;
+        align-items: stretch;
+      }
+      .formula-row .lhs,
+      .formula-row .op {
+        font-family: var(--mincho);
+        font-weight: 800;
+        font-size: clamp(24px, 2.8vw, 36px);
+        align-self: center;
+        white-space: nowrap;
+      }
+      .formula-row .op {
+        color: var(--gold);
+      }
+      .term {
+        background: #fff;
+        color: var(--navy);
+        border-radius: 5px;
+        padding: 16px 14px 14px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 10px;
+        animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+      }
+      .term:nth-of-type(2) {
+        animation-delay: 0.12s;
+      }
+      .term:nth-of-type(3) {
+        animation-delay: 0.24s;
+      }
+      .term:nth-of-type(4) {
+        animation-delay: 0.36s;
+      }
+      @keyframes rise {
+        from {
+          transform: translateY(14px);
+          opacity: 0;
+        }
+        to {
+          transform: none;
+          opacity: 1;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .term {
+          animation: none;
+        }
+        html {
+          scroll-behavior: auto;
+        }
+      }
+      .term b {
+        font-family: var(--mincho);
+        font-weight: 800;
+        font-size: clamp(22px, 2.5vw, 32px);
+        line-height: 1.3;
+        display: block;
+        white-space: nowrap;
+      }
+      .term span {
+        display: block;
+        font-size: 15px;
+        font-weight: 900;
+        line-height: 1.5;
+        background: var(--wood-soft);
+        color: #5a3d0c;
+        border-radius: 3px;
+        padding: 4px 6px;
+      }
+
+      .verdict {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 22px;
+        background: var(--card);
+        border: 2px solid var(--navy);
+        border-radius: 6px;
+        overflow: hidden;
+      }
+      .verdict > div {
+        padding: 22px 24px;
+        border-left: 1px solid var(--line);
+      }
+      .verdict > div:first-child {
+        border-left: 0;
+      }
+      .verdict h3 {
+        margin: 0 0 6px;
+        font-size: 15px;
+        letter-spacing: 0.12em;
+        color: var(--wood);
+        font-weight: 900;
+      }
+      .verdict p {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.65;
+      }
+      .verdict small {
+        display: block;
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--sub);
+        margin-top: 4px;
+        line-height: 1.6;
+      }
+
+      /* 章 */
+      section.ch {
+        padding: 76px 0 64px;
+        border-bottom: 1px solid var(--line);
+      }
+      .ch-head {
+        display: grid;
+        grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+        gap: 40px;
+        margin-bottom: 36px;
+        align-items: start;
+      }
+      .ch-head h2 {
+        font-family: var(--mincho);
+        font-weight: 800;
+        font-size: clamp(28px, 3.2vw, 38px);
+        line-height: 1.45;
+        margin: 0;
+        color: var(--navy);
+      }
+      .ch-head .kicker {
+        display: block;
+        font-family: var(--gothic);
+        font-size: 15px;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        color: var(--wood);
+        margin-bottom: 10px;
+      }
+      .ch-head p {
+        margin: 0;
+        font-size: 19px;
+      }
+
+      /* 1 現在地 */
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        background: var(--card);
+        border-radius: 6px;
+        border: 1px solid var(--line);
+        overflow: hidden;
+      }
+      .facts > div {
+        padding: 26px 22px;
+        border-left: 1px solid var(--line);
+      }
+      .facts > div:first-child {
+        border-left: 0;
+      }
+      .facts .num {
+        display: block;
+        font-size: 46px;
+        line-height: 1.1;
+        color: var(--navy);
+      }
+      .facts .num small {
+        font-size: 19px;
+        margin-left: 2px;
+      }
+      .facts span {
+        display: block;
+        font-size: 16px;
+        font-weight: 700;
+        margin-top: 10px;
+        line-height: 1.6;
+      }
+      .now {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 22px;
+        margin-top: 26px;
+      }
+      .now article {
+        background: var(--card);
+        border-radius: 6px;
+        padding: 28px 28px 24px;
+        border: 1px solid var(--line);
+      }
+      .now article.next-move {
+        background: var(--navy);
+        color: #fff;
+        border-color: var(--navy);
+      }
+      .now h3 {
+        margin: 0 0 12px;
+        font-size: 21px;
+        font-weight: 900;
+        line-height: 1.5;
+      }
+      .now ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .now li {
+        padding: 9px 0 9px 24px;
+        border-top: 1px solid var(--line);
+        font-size: 17px;
+        line-height: 1.7;
+        position: relative;
+      }
+      .now li::before {
+        content: "";
+        position: absolute;
+        left: 2px;
+        top: 20px;
+        width: 10px;
+        height: 10px;
+        background: var(--leaf);
+        border-radius: 50%;
+      }
+      .now .next-move li {
+        border-top-color: rgba(255, 255, 255, 0.28);
+      }
+      .now .next-move li::before {
+        background: var(--gold);
+      }
+      .now p {
+        margin: 0 0 12px;
+        font-size: 17px;
+        line-height: 1.8;
+      }
+
+      /* 2 桁の考え方 */
+      .digits {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+        gap: 26px;
+        align-items: stretch;
+      }
+      .panel {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 28px 28px 26px;
+      }
+      .panel h3 {
+        margin: 0 0 6px;
+        font-size: 22px;
+        font-weight: 900;
+        line-height: 1.5;
+      }
+      .panel p {
+        margin: 8px 0 0;
+        font-size: 17px;
+        line-height: 1.8;
+      }
+      .field {
+        margin-top: 18px;
+      }
+      .field label {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        font-size: 17px;
+        font-weight: 700;
+        gap: 12px;
+      }
+      .field output {
+        font-family: var(--mincho);
+        font-weight: 800;
+        font-size: 24px;
+        color: var(--navy);
+        white-space: nowrap;
+      }
+      .field input[type="range"] {
+        width: 100%;
+        margin: 8px 0 0;
+        accent-color: var(--navy);
+        height: 28px;
+      }
+      .field select {
+        width: 100%;
+        margin-top: 8px;
+        font: inherit;
+        font-weight: 700;
+        padding: 10px 12px;
+        border: 2px solid var(--navy);
+        border-radius: 4px;
+        background: #fff;
+        color: var(--ink);
+      }
+      .mult {
+        margin-top: 22px;
+        background: var(--leaf-soft);
+        border: 2px solid var(--leaf);
+        border-radius: 6px;
+        padding: 18px 22px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .mult > span {
+        font-size: 17px;
+        font-weight: 900;
+        color: var(--leaf);
+      }
+      .mult b {
+        font-family: var(--mincho);
+        font-weight: 800;
+        font-size: 54px;
+        line-height: 1;
+        color: var(--leaf);
+        white-space: nowrap;
+      }
+      .mult b small {
+        font-size: 22px;
+        font-family: var(--gothic);
+        font-weight: 900;
+      }
+      .tenth {
+        background: var(--wood-soft);
+        border-color: #dcc392;
+      }
+      .tenth .bars {
+        margin: 18px 0 6px;
+      }
+      .tenth .bar {
+        display: grid;
+        grid-template-columns: 118px minmax(0, 1fr);
+        gap: 12px;
+        align-items: center;
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: 700;
+      }
+      .tenth .bar i {
+        display: block;
+        height: 30px;
+        border-radius: 3px;
+        background: var(--navy);
+      }
+      .tenth .bar.after i {
+        background: var(--wood);
+        width: 6.5%;
+      }
+      .tenth .bar b {
+        font-family: var(--mincho);
+        font-size: 20px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+      .tenth .track {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .tenth .track i {
+        flex: 0 0 auto;
+      }
+      .tenth .bar.before .track i {
+        flex: 1 1 auto;
+      }
+
+      /* 3 施策 */
+      .grp {
+        font-family: var(--mincho);
+        font-weight: 800;
+        font-size: 25px;
+        color: var(--navy);
+        margin: 44px 0 0;
+        padding: 0 0 10px;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      .grp:first-of-type {
+        margin-top: 0;
+      }
+      .grp small {
+        font-family: var(--gothic);
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--sub);
+      }
+      .m-row {
+        display: grid;
+        grid-template-columns: 150px minmax(0, 1fr) minmax(0, 330px);
+        gap: 30px;
+        padding: 32px 0;
+        border-top: 2px solid var(--navy);
+        align-items: start;
+      }
+      .m-row.last {
+        border-bottom: 2px solid var(--navy);
+      }
+      .m-no {
+        font-family: var(--mincho);
+        font-weight: 800;
+        color: var(--navy);
+        line-height: 1;
+      }
+      .m-no small {
+        display: block;
+        font-family: var(--gothic);
+        font-size: 15px;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        color: var(--wood);
+        margin-bottom: 6px;
+      }
+      .m-no b {
+        font-size: 64px;
+      }
+      .m-no .moves {
+        display: block;
+        margin-top: 14px;
+        font-family: var(--gothic);
+        font-size: 15px;
+        font-weight: 900;
+        line-height: 1.5;
+        background: var(--navy);
+        color: #fff;
+        border-radius: 3px;
+        padding: 6px 10px;
+        text-align: center;
+      }
+      .m-row h3 {
+        font-family: var(--mincho);
+        font-size: 28px;
+        font-weight: 800;
+        margin: 0;
+        line-height: 1.45;
+        color: var(--navy);
+      }
+      .m-row p {
+        margin: 10px 0 0;
+        font-size: 18px;
+      }
+      .m-row ul {
+        margin: 12px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+      .m-row li {
+        position: relative;
+        padding: 6px 0 6px 26px;
+        font-size: 17px;
+        line-height: 1.7;
+      }
+      .m-row li::before {
+        content: "";
+        position: absolute;
+        left: 2px;
+        top: 16px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 3px solid var(--wood);
+      }
+      .ev {
+        margin-top: 16px;
+        background: var(--wood-soft);
+        border-left: 5px solid var(--wood);
+        padding: 14px 18px;
+        border-radius: 0 5px 5px 0;
+        font-size: 17px;
+        line-height: 1.75;
+      }
+      .ev b.h {
+        display: block;
+        font-size: 15px;
+        letter-spacing: 0.1em;
+        color: #6f4a0f;
+        font-weight: 900;
+      }
+      .ev strong {
+        font-family: var(--mincho);
+        font-size: 22px;
+        font-weight: 800;
+        color: #5a3d0c;
+      }
+      .spec {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 22px 22px 18px;
+      }
+      .spec h4 {
+        margin: 0 0 4px;
+        font-size: 15px;
+        letter-spacing: 0.1em;
+        color: var(--sub);
+        font-weight: 900;
+      }
+      .spec .svc {
+        font-size: 19px;
+        font-weight: 900;
+        line-height: 1.5;
+        margin: 0;
+      }
+      .spec .price {
+        font-family: var(--mincho);
+        font-weight: 800;
+        font-size: 30px;
+        color: var(--navy);
+        line-height: 1.35;
+        margin: 8px 0 0;
+      }
+      .spec .price small {
+        font-size: 15px;
+        font-family: var(--gothic);
+        font-weight: 700;
+        margin-left: 4px;
+      }
+      .spec dl {
+        margin: 12px 0 0;
+        font-size: 16px;
+        line-height: 1.7;
+      }
+      .spec dt {
+        font-weight: 900;
+        margin-top: 8px;
+      }
+      .spec dd {
+        margin: 0;
+      }
+      .spec hr {
+        border: 0;
+        border-top: 1px dashed var(--line);
+        margin: 16px 0;
+      }
+
+      /* 4 進め方 */
+      .road {
+        display: grid;
+        grid-template-columns: minmax(0, 400px) minmax(0, 1fr);
+        gap: 44px;
+        align-items: center;
+      }
+      .rings {
+        display: block;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      .phases {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .phases li {
+        padding: 22px 0;
+        border-top: 2px solid var(--navy);
+      }
+      .phases li:last-child {
+        border-bottom: 2px solid var(--navy);
+      }
+      .phases .when {
+        display: inline-block;
+        font-size: 15px;
+        font-weight: 900;
+        background: var(--navy);
+        color: #fff;
+        padding: 2px 12px;
+        border-radius: 3px;
+      }
+      .phases h3 {
+        margin: 10px 0 4px;
+        font-size: 22px;
+        font-weight: 900;
+        line-height: 1.5;
+      }
+      .phases p {
+        margin: 0;
+        font-size: 17px;
+        line-height: 1.8;
+      }
+      .phases .out {
+        margin-top: 8px;
+        font-size: 16px;
+        font-weight: 700;
+        color: var(--leaf);
+      }
+
+      /* 5 費用 */
+      .cost {
+        background: var(--navy);
+        color: #fff;
+        border-bottom: 0;
+      }
+      .cost .ch-head h2 {
+        color: #fff;
+      }
+      .cost .ch-head .kicker {
+        color: var(--gold);
+      }
+      .plans {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+        align-items: stretch;
+      }
+      .plan {
+        background: #fff;
+        color: var(--ink);
+        border-radius: 6px;
+        padding: 28px 26px 26px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .plan.rec {
+        outline: 5px solid var(--gold);
+      }
+      .plan .flag {
+        position: absolute;
+        top: -16px;
+        left: 22px;
+        background: var(--gold);
+        color: #3a2606;
+        font-size: 15px;
+        font-weight: 900;
+        padding: 3px 14px;
+        border-radius: 3px;
+      }
+      .plan h3 {
+        margin: 0;
+        font-size: 22px;
+        font-weight: 900;
+        line-height: 1.5;
+      }
+      .plan .for {
+        margin: 4px 0 0;
+        font-size: 16px;
+        color: var(--sub);
+        font-weight: 700;
+      }
+      .plan .total {
+        font-family: var(--mincho);
+        font-weight: 800;
+        font-size: 50px;
+        line-height: 1.15;
+        color: var(--navy);
+        margin: 18px 0 0;
+      }
+      .plan .total small {
+        font-size: 18px;
+        font-family: var(--gothic);
+        font-weight: 900;
+        margin-left: 4px;
+      }
+      .plan .calc {
+        font-size: 16px;
+        font-weight: 700;
+        margin: 6px 0 0;
+        line-height: 1.6;
+      }
+      .plan ul {
+        margin: 18px 0 0;
+        padding: 16px 0 0;
+        border-top: 1px solid var(--line);
+        list-style: none;
+        font-size: 17px;
+        line-height: 1.7;
+      }
+      .plan li {
+        padding: 4px 0 4px 22px;
+        position: relative;
+      }
+      .plan li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 15px;
+        width: 11px;
+        height: 3px;
+        background: var(--wood);
+      }
+      .menu {
+        margin-top: 34px;
+        border: 1px solid rgba(255, 255, 255, 0.45);
+        border-radius: 6px;
+        overflow: hidden;
+      }
+      .menu table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 17px;
+      }
+      .menu caption {
+        text-align: left;
+        padding: 14px 22px;
+        font-weight: 900;
+        font-size: 18px;
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .menu th,
+      .menu td {
+        padding: 14px 22px;
+        text-align: left;
+        border-top: 1px solid rgba(255, 255, 255, 0.3);
+        vertical-align: top;
+        line-height: 1.7;
+      }
+      .menu th {
+        font-weight: 900;
+        width: 32%;
+      }
+      .menu th small {
+        display: block;
+        font-weight: 700;
+        font-size: 15px;
+        color: var(--gold);
+      }
+      .menu td.yen {
+        font-weight: 900;
+        font-size: 18px;
+        width: 34%;
+      }
+      .cost .note {
+        color: #dbe5ef;
+        margin-top: 18px;
+      }
+
+      /* 6 投資対効果 */
+      .roi-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 28px;
+        align-items: start;
+      }
+      .result {
+        background: var(--leaf-soft);
+        border: 2px solid var(--leaf);
+        border-radius: 6px;
+        padding: 26px 28px;
+      }
+      .result h3 {
+        margin: 0;
+        font-size: 17px;
+        font-weight: 900;
+        color: var(--leaf);
+        letter-spacing: 0.06em;
+      }
+      .result .big {
+        font-family: var(--mincho);
+        font-weight: 800;
+        font-size: clamp(40px, 4.6vw, 58px);
+        line-height: 1.25;
+        color: var(--leaf);
+        margin: 6px 0 2px;
+      }
+      .result .big small {
+        font-size: 21px;
+        font-family: var(--gothic);
+        font-weight: 900;
+      }
+      .result p {
+        margin: 0;
+        font-size: 17px;
+        line-height: 1.75;
+      }
+      .kv {
+        margin: 20px 0 0;
+        border-top: 1px solid #9cc7b4;
+      }
+      .kv div {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 11px 0;
+        border-bottom: 1px solid #9cc7b4;
+        font-size: 17px;
+        font-weight: 700;
+      }
+      .kv b {
+        font-family: var(--mincho);
+        font-size: 22px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+      .upside {
+        margin-top: 30px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        overflow: hidden;
+      }
+      .upside table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 17px;
+      }
+      .upside caption {
+        text-align: left;
+        padding: 16px 22px;
+        font-weight: 900;
+        font-size: 19px;
+        background: var(--band1);
+        line-height: 1.6;
+      }
+      .upside th,
+      .upside td {
+        padding: 13px 22px;
+        border-top: 1px solid var(--line);
+        text-align: left;
+      }
+      .upside td.n {
+        font-family: var(--mincho);
+        font-weight: 800;
+        font-size: 23px;
+        color: var(--navy);
+        white-space: nowrap;
+      }
+
+      /* 7 実績 */
+      .proof {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+      .proof article {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 26px 24px 22px;
+      }
+      .proof .num {
+        display: block;
+        font-size: 54px;
+        line-height: 1.1;
+        color: var(--navy);
+      }
+      .proof .num small {
+        font-size: 22px;
+        margin-left: 2px;
+      }
+      .proof h3 {
+        margin: 10px 0 6px;
+        font-size: 19px;
+        font-weight: 900;
+        line-height: 1.55;
+      }
+      .proof p {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.75;
+        color: var(--sub);
+      }
+      .proof .src {
+        margin-top: 10px;
+        font-size: 15px;
+        border-top: 1px dashed var(--line);
+        padding-top: 8px;
+      }
+      .self {
+        margin-top: 22px;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+      .self article {
+        background: var(--wood-soft);
+        border-radius: 6px;
+        padding: 26px 24px 22px;
+      }
+      .self h3 {
+        margin: 8px 0 8px;
+        font-size: 19px;
+        font-weight: 900;
+        line-height: 1.5;
+      }
+      .self p {
+        margin: 0;
+        font-size: 16px;
+        line-height: 1.8;
+      }
+      .self .num {
+        font-size: 52px;
+        color: #6f4a0f;
+        line-height: 1.1;
+        display: block;
+      }
+      .self .num small {
+        font-size: 20px;
+      }
+      .self .src {
+        margin-top: 10px;
+        font-size: 15px;
+        color: #5a3d0c;
+        border-top: 1px dashed #c9a868;
+        padding-top: 8px;
+      }
+      .who2 {
+        margin-top: 22px;
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      }
+      .who2 > div {
+        padding: 26px 28px;
+      }
+      .who2 > div + div {
+        border-left: 1px solid var(--line);
+      }
+      .who2 h3 {
+        margin: 0 0 6px;
+        font-size: 20px;
+        font-weight: 900;
+      }
+      .who2 p {
+        margin: 0;
+        font-size: 17px;
+        line-height: 1.8;
+      }
+
+      /* 8 役割 */
+      .safe {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+      .safe article {
+        border-left: 5px solid var(--navy);
+        background: var(--card);
+        padding: 22px 24px;
+        border-radius: 0 6px 6px 0;
+      }
+      .safe h3 {
+        margin: 0 0 8px;
+        font-size: 20px;
+        font-weight: 900;
+        line-height: 1.5;
+      }
+      .safe p {
+        margin: 0;
+        font-size: 17px;
+        line-height: 1.8;
+      }
+
+      /* 9 次 */
+      .next {
+        background: var(--card);
+      }
+      .ask {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+      }
+      .ask li {
+        background: var(--paper);
+        border: 2px solid var(--navy);
+        border-radius: 6px;
+        padding: 24px 24px 22px;
+        font-size: 19px;
+        font-weight: 700;
+        line-height: 1.7;
+      }
+      .ask li span {
+        display: block;
+        font-size: 16px;
+        font-weight: 500;
+        color: var(--sub);
+        margin-top: 8px;
+        line-height: 1.75;
+      }
+      .cta {
+        margin-top: 34px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 2px solid var(--navy);
+        padding-top: 28px;
+      }
+      .cta p {
+        margin: 0;
+        font-size: 19px;
+        font-weight: 700;
+        max-width: 32em;
+      }
+      .btn {
+        display: inline-block;
+        background: var(--navy);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 900;
+        font-size: 19px;
+        padding: 16px 30px;
+        border-radius: 4px;
+      }
+      .btn:hover {
+        background: #0a3a63;
+      }
+      .sign {
+        margin-top: 40px;
+        font-size: 18px;
+        line-height: 1.8;
+      }
+      .sign b {
+        font-family: var(--mincho);
+        font-size: 26px;
+        display: block;
+      }
+
+      footer {
+        padding: 48px 0 72px;
+        font-size: 16px;
+        line-height: 1.8;
+        color: var(--sub);
+      }
+      footer h2 {
+        font-size: 18px;
+        color: var(--ink);
+        margin: 0 0 10px;
+        font-weight: 900;
+      }
+      footer ul {
+        margin: 0 0 26px;
+        padding-left: 1.2em;
+      }
+      footer li {
+        margin: 4px 0;
+        overflow-wrap: anywhere;
+      }
+
+      @media (max-width: 960px) {
+        .ch-head,
+        .now,
+        .digits,
+        .roi-grid,
+        .who2,
+        .road {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .ch-head {
+          gap: 14px;
+        }
+        .who2 > div + div {
+          border-left: 0;
+          border-top: 1px solid var(--line);
+        }
+        .facts {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .facts > div:nth-child(3) {
+          border-left: 0;
+        }
+        .facts > div:nth-child(n + 3) {
+          border-top: 1px solid var(--line);
+        }
+        .plans,
+        .proof,
+        .self,
+        .safe,
+        .ask,
+        .verdict {
+          grid-template-columns: minmax(0, 1fr);
+        }
+        .verdict > div {
+          border-left: 0;
+          border-top: 1px solid var(--line);
+        }
+        .verdict > div:first-child {
+          border-top: 0;
+        }
+        .formula-row {
+          grid-template-columns: auto minmax(0, 1fr);
+          gap: 10px 12px;
+        }
+        .formula-row .lhs {
+          grid-column: 1 / -1;
+        }
+        .m-row {
+          grid-template-columns: 96px minmax(0, 1fr);
+          gap: 20px;
+        }
+        .m-row .spec {
+          grid-column: 1 / -1;
+        }
+        .m-no b {
+          font-size: 48px;
+        }
+        .plan.rec {
+          margin-top: 10px;
+        }
+      }
+      @media (max-width: 560px) {
+        body {
+          font-size: 17px;
+        }
+        .wrap {
+          padding: 0 18px;
+        }
+        .cover {
+          padding: 38px 0 40px;
+        }
+        section.ch {
+          padding: 52px 0 44px;
+        }
+        .formula {
+          padding: 22px 18px;
+        }
+        .m-row {
+          grid-template-columns: minmax(0, 1fr);
+          gap: 14px;
+        }
+        .m-no {
+          display: flex;
+          align-items: center;
+          gap: 14px;
+          flex-wrap: wrap;
+        }
+        .m-no small {
+          margin: 0;
+        }
+        .m-no .moves {
+          margin: 0;
+        }
+        .menu th,
+        .menu td {
+          display: block;
+          width: auto;
+          padding: 8px 18px;
+        }
+        .menu th {
+          padding-top: 16px;
+        }
+        .menu td {
+          border-top: 0;
+        }
+        .menu td.yen {
+          width: auto;
+          padding-bottom: 16px;
+        }
+        .upside th,
+        .upside td {
+          padding: 11px 14px;
+        }
+        .addressee b {
+          font-size: 26px;
+        }
+        .plan .total {
+          font-size: 44px;
+        }
+        .mult b {
+          font-size: 46px;
+        }
+      }
+      @media print {
+        .toc {
+          display: none;
+        }
+        body {
+          background: #fff;
+          font-size: 12pt;
+        }
+        section.ch {
+          padding: 28px 0;
+        }
+        .cost,
+        .formula,
+        .now .next-move {
+          -webkit-print-color-adjust: exact;
+          print-color-adjust: exact;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="toc" aria-label="目次">
+      <ul>
+        <li><a href="#now">貴グループの現在地</a></li>
+        <li><a href="#digits">桁を変える考え方</a></li>
+        <li><a href="#measures">6つの施策</a></li>
+        <li><a href="#road">進め方</a></li>
+        <li><a href="#cost">費用</a></li>
+        <li><a href="#roi">投資対効果</a></li>
+        <li><a href="#proof">当社の実績</a></li>
+        <li><a href="#roles">役割分担</a></li>
+        <li><a href="#next">本日のご相談</a></li>
+      </ul>
+    </nav>
+
+    <header class="cover">
+      <div class="wrap">
+        <span class="doc-label">AI活用支援のご提案　2026年11月20日</span>
+        <p class="addressee">
+          TOMAコンサルタンツグループ株式会社<br />代表取締役会長<b
+            >藤間 秋男 様</b
+          >
+        </p>
+        <h1>効率化の次は、<br /><em>売上の桁</em>を変えるAI活用へ。</h1>
+        <p class="lead">
+          貴グループは、全社員へのAIアカウント配布と32のAIエージェントで、周辺作業の効率化をすでに進めておられます。本提案はその先の話です。AIを「時間を浮かせる道具」から「売上をつくる道具」へ。当社が自社の経営で実測してきた方法を、6つの施策にまとめました。
+        </p>
+        <p class="from">株式会社コミクス　代表取締役　鈴木 章裕</p>
+
+        <div
+          class="formula"
+          role="group"
+          aria-label="年間粗利の式と、各項を動かす施策"
+        >
+          <p class="formula-cap">
+            この資料の背骨：粗利は4つの項の掛け算です。6つの施策は、それぞれどの項を動かすかで並べています。
+          </p>
+          <div class="formula-row">
+            <span class="lhs">年間粗利</span><span class="op">＝</span>
+            <div class="term"><b>商談数</b><span>施策1・2</span></div>
+            <span class="op">×</span>
+            <div class="term"><b>受注率</b><span>施策3</span></div>
+            <span class="op">×</span>
+            <div class="term"><b>平均単価</b><span>施策3・6</span></div>
+            <span class="op">×</span>
+            <div class="term"><b>粗利率</b><span>施策4・5</span></div>
+          </div>
+        </div>
+
+        <div class="verdict">
+          <div>
+            <h3>ご提案の骨子</h3>
+            <p>
+              1つの項を5倍にするのではなく、3つの項を同時に動かす<small
+                >商談数2倍 × 受注率1.5倍 × 単価1.7倍 ＝ 5.1倍（設計例）。</small
+              >
+            </p>
+          </div>
+          <div>
+            <h3>費用（税別）</h3>
+            <p>
+              年額240万円から。おすすめは年額600万円<small
+                >藤間様の顧問と、幹部4名の伴走を同時に始める場合。</small
+              >
+            </p>
+          </div>
+          <div>
+            <h3>
+              回収の目安<span class="tag-est" style="margin-left: 8px"
+                >仮定</span
+              >
+            </h3>
+            <p>
+              年額600万円は、追加の受注12件で回収<small
+                >受注1件の粗利を50万円と置いた場合。顧問契約1,200件の1%にあたります。</small
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- 1 -->
+      <section class="ch" id="now">
+        <div class="wrap">
+          <div class="ch-head">
+            <h2>
+              <span class="kicker">貴グループの現在地</span
+              >効率化は、すでに貴グループの手で進んでいる
+            </h2>
+            <p>
+              面談前の資料のため、ここに書いた内容は貴グループの公式サイトと、公開されているプレスリリースから引いています。読み違いがあれば、本日のお話で直します。
+            </p>
+          </div>
+          <div class="facts">
+            <div>
+              <b class="num">1890<small>年</small></b
+              ><span>藤間家の司法書士業が起源。会計事務所の開設は1982年</span>
+            </div>
+            <div>
+              <b class="num">200<small>名</small></b
+              ><span
+                >税理士・社労士・司法書士・ITコンサルタントなどの専門家</span
+              >
+            </div>
+            <div>
+              <b class="num">1,200<small>件以上</small></b
+              ><span>顧問契約</span>
+            </div>
+            <div>
+              <b class="num">4,700<small>回以上</small></b
+              ><span>セミナー開催（通算）。年200回以上</span>
+            </div>
+          </div>
+          <div class="now">
+            <article>
+              <h3>すでに実現されていること</h3>
+              <ul>
+                <li>
+                  パート社員を含む全社員に、入社時からAIのアカウントを配布
+                </li>
+                <li>部門ごとに32のAIエージェントを作成して活用</li>
+                <li>
+                  骨子があれば、約30分で提案資料として使える水準まで仕上げた事例
+                </li>
+                <li>
+                  M&amp;Aの財務デューデリジェンスで、分析時間を従来の10分の1以下に短縮したケース
+                </li>
+                <li>
+                  顧問先に向けて、AI導入支援・DX推進・kintone導入支援を提供
+                </li>
+              </ul>
+              <p class="note" style="margin-top: 12px">
+                JAPAN
+                AI株式会社のプレスリリース（2026年9月3日）および貴グループ公式サイトより。
+              </p>
+            </article>
+            <article class="next-move">
+              <h3>
+                <span class="tag-est">当社の見立て</span>次に効くのは、売上の側
+              </h3>
+              <p>
+                「原価を10分の1にする」使い方は、貴グループがすでに自力で形にされています。同じ道具を、今度は売上の側に向ける番だと当社は考えます。
+              </p>
+              <ul>
+                <li>
+                  年200回以上のセミナー、『致知』の連載、100年企業・1000年企業サミット。発信の素材は、すでに大量にある
+                </li>
+                <li>
+                  顧問契約1,200件以上と15の専門分野。分野をまたぐ提案の余地が大きい
+                </li>
+                <li>
+                  顧問先の経営者が次に知りたいのは「自社はAIをどう使うか」。貴グループには、自社の実例がある
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2 -->
+      <section class="ch" id="digits">
+        <div class="wrap">
+          <div class="ch-head">
+            <h2>
+              <span class="kicker">桁を変える考え方</span
+              >売上5倍は掛け算で、原価10分の1は「作る仕事」で
+            </h2>
+            <p>
+              どちらも、気合いではなく設計で届く水準です。売上は、1つの項を5倍にしようとすると無理が出ます。3つの項を少しずつ動かすと届きます。下のつまみを動かしてお確かめください。
+            </p>
+          </div>
+          <div class="digits">
+            <div class="panel">
+              <h3>売上側：3つの項を同時に動かす</h3>
+              <p class="note">
+                <span class="tag-est">設計例</span
+                >初期値は当社が置いた設計例です。グループ全体の売上ではなく、対象に選んだサービス分野ごとに設計します。粗利率は変えない前提です。
+              </p>
+              <div class="field">
+                <label for="mA"
+                  >商談数（施策1・2） <output id="mAo">2.0倍</output></label
+                >
+                <input
+                  type="range"
+                  id="mA"
+                  min="1"
+                  max="3"
+                  step="0.1"
+                  value="2"
+                />
+              </div>
+              <div class="field">
+                <label for="mB"
+                  >受注率（施策3） <output id="mBo">1.5倍</output></label
+                >
+                <input
+                  type="range"
+                  id="mB"
+                  min="1"
+                  max="2"
+                  step="0.1"
+                  value="1.5"
+                />
+              </div>
+              <div class="field">
+                <label for="mC"
+                  >平均単価（施策3・6） <output id="mCo">1.7倍</output></label
+                >
+                <input
+                  type="range"
+                  id="mC"
+                  min="1"
+                  max="2.5"
+                  step="0.1"
+                  value="1.7"
+                />
+              </div>
+              <div class="mult" aria-live="polite">
+                <span>掛け合わせた粗利</span
+                ><b><span id="mOut">5.1</span><small>倍</small></b>
+              </div>
+            </div>
+            <div class="panel tenth">
+              <h3>原価側：1人で、15.4人分の成果物をつくる</h3>
+              <p>
+                当社代表が1週間に作った成果物689件を、人の手で作った場合の時間と、実際にかけた時間の比較です。
+              </p>
+              <div class="bars">
+                <div class="bar before">
+                  <span>人手で作ると</span>
+                  <div class="track"><i></i><b>759.8時間</b></div>
+                </div>
+                <div class="bar after">
+                  <span>実際の投入</span>
+                  <div class="track"><i></i><b>49.5時間</b></div>
+                </div>
+              </div>
+              <p class="note">
+                「生産性15.4人分
+                AI経営実測記録」2026年8月21日（測定は2026年7月29日〜8月5日）。自社基準の人手換算であり、生産性の伸び率ではありません。実投入には商談・会食を含みます。生産能力の実測値であり、成果を保証するものではありません。
+              </p>
+              <p>
+                提案書・記事・資料・集計といった「作る仕事」では、10分の1は特別な水準ではありません。貴グループの財務デューデリジェンスで分析時間が10分の1以下になった例が、それを示しています。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3 -->
+      <section class="ch" id="measures">
+        <div class="wrap">
+          <div class="ch-head">
+            <h2>
+              <span class="kicker">6つの施策</span>粗利の式の、どの項を動かすか
+            </h2>
+            <p>
+              当社がご提供できる支援を、経営への効き方で並べました。貴グループがすでにお持ちのAI基盤と重なるものは外し、当社が自社で数字を出しているものだけを載せています。
+            </p>
+          </div>
+
+          <h3 class="grp">
+            売上をつくる<small>商談数・受注率・平均単価を動かす</small>
+          </h3>
+
+          <div class="m-row">
+            <div class="m-no">
+              <small>施策</small><b>1</b
+              ><span class="moves">商談数を動かす</span>
+            </div>
+            <div>
+              <h3>年200回のセミナーを、毎日の発信に変える</h3>
+              <p>
+                セミナー1回分の資料と録画は、記事にもプレスリリースにもなります。貴グループには素材が年200回分以上あり、いまはその大半が当日限りで終わっていると当社は推定します。1つの素材を、複数の記事とリリース文面へ展開する仕組みをつくります。
+              </p>
+              <ul>
+                <li>
+                  人が担うのは「テーマを決める」と「原稿を確かめる」の2つ。税務・労務・法務の記述は、貴グループの専門家の確認を必須の工程にします
+                </li>
+                <li>
+                  『致知』の連載や100年企業サミットの内容も、藤間様のお名前での発信として再構成できます
+                </li>
+                <li>
+                  少数の記事で試し、問い合わせの数を測ってから本数を増やします
+                </li>
+              </ul>
+              <div class="ev">
+                <b class="h">当社の実測</b
+                >2か月で<strong>215記事</strong>を公開し、問い合わせは<strong>84件</strong>（月平均42件）。教材10枚から、プレスリリース文面<strong>15本を1時間</strong>で作成。<br /><span
+                  class="note"
+                  >2026年8〜9月。リリースは文面作成の実績で、配信・掲載の実績ではありません。</span
+                >
+              </div>
+            </div>
+            <aside class="spec">
+              <h4>使うサービス</h4>
+              <p class="svc">
+                note発信半自動化支援<br />PR TIMES配信の半自動化
+              </p>
+              <p class="price">個別お見積り</p>
+              <dl>
+                <dt>進め方</dt>
+                <dd>現状確認 → 少数記事で試行 → 運用定着の3段階</dd>
+                <dt>見積りの前提</dt>
+                <dd>対象分野の数と、月あたりの本数で決まります</dd>
+              </dl>
+            </aside>
+          </div>
+
+          <div class="m-row">
+            <div class="m-no">
+              <small>施策</small><b>2</b
+              ><span class="moves">商談数を動かす</span>
+            </div>
+            <div>
+              <h3>AIに聞かれたとき、相談先として名前が挙がるようにする</h3>
+              <p>
+                経営者が「事業承継の相談先は」「税務調査に強い事務所は」と生成AIに尋ねる場面が増えています。検索順位とは別に、AIの回答に引用されやすいサイトの作りがあります。貴グループの15の専門分野ごとに、現状を点数で診断します。
+              </p>
+              <ul>
+                <li>URLを入れると、7つの観点・100点満点で診断</li>
+                <li>
+                  優先して直す項目と、制作担当へそのまま渡せる指示書を出力
+                </li>
+                <li>直した後に再診断し、点数の変化を確かめる</li>
+              </ul>
+              <div class="ev">
+                <b class="h">ご留意</b
+                >診断と改善の道具です。AIの回答への掲載や順位を保証するものではありません。
+              </div>
+            </div>
+            <aside class="spec">
+              <h4>使うサービス</h4>
+              <p class="svc">LLMOアナライザー</p>
+              <p class="price">個別お見積り</p>
+              <dl>
+                <dt>進め方</dt>
+                <dd>診断 → 指示書 → サイト改善 → 再診断</dd>
+                <dt>始めやすさ</dt>
+                <dd>まず1ページの診断から始められます（診断はURL単位）</dd>
+              </dl>
+            </aside>
+          </div>
+
+          <div class="m-row">
+            <div class="m-no">
+              <small>施策</small><b>3</b
+              ><span class="moves">受注率・単価を動かす</span>
+            </div>
+            <div>
+              <h3>顧問契約1,200件に、分野をまたぐ提案を漏らさず届ける</h3>
+              <p>
+                税務の顧問先に、承継・相続・労務・登記の兆しが出ていても、担当者が気づいて提案書を書く時間がなければ、提案は出ません。貴グループが今後の構想として挙げておられる「面談記録とアンケートの分析」を、提案の数に直結させる仕組みです。
+              </p>
+              <ul>
+                <li>
+                  保留になっている案件と既存の顧問先を毎月棚卸しし、「いま提案すべき先」のリストを更新する
+                </li>
+                <li>
+                  提案書を1社ごとに作り分ける型をつくる。実際の商談記録と提案資料を教材に、月2回の商談分析と指導を行う
+                </li>
+                <li>
+                  商談数・受注率・単価を毎週集計し、月1回の経営会議で確かめる（当社代表とCIOが同席）
+                </li>
+              </ul>
+              <div class="ev">
+                <b class="h">当社の実測</b
+                >直近1か月で、提案・診断資料<strong>165本</strong>（67社分）を作成。送付37、商談化26、<strong>受注20</strong>。<br /><span
+                  class="note"
+                  >2026年7月18日〜8月18日の当社の実測。商談化と受注は2026年8月時点の実績です。</span
+                >
+              </div>
+            </div>
+            <aside class="spec">
+              <h4>使うサービス</h4>
+              <p class="svc">AI営業推進室</p>
+              <p class="price">月額100万円<small>× 12か月（税別）</small></p>
+              <dl>
+                <dt>内容</dt>
+                <dd>
+                  商談の創出・営業の育成・成果の計測を12か月。記事化・プレスリリース・AI検索対策（施策1・2の内容）と、初期研修（2時間×5回・最大10名）を含みます
+                </dd>
+                <dt>合計</dt>
+                <dd>年間1,200万円</dd>
+                <dt>対象の目安</dt>
+                <dd>1件の粗利が100万円以上の商材。営業担当3〜10名</dd>
+                <dt>ご留意</dt>
+                <dd>
+                  商談数・受注・売上を保証するものではありません。目標値と測り方は、開始前に個別に合意します
+                </dd>
+              </dl>
+            </aside>
+          </div>
+
+          <h3 class="grp">経営を速くする<small>粗利率を動かす</small></h3>
+
+          <div class="m-row">
+            <div class="m-no">
+              <small>施策</small><b>4</b
+              ><span class="moves">粗利率を動かす</span>
+            </div>
+            <div>
+              <h3>経営会議を「報告の場」から「決める場」に変える</h3>
+              <p>
+                数字はあるのに、決まらない。多くの会社で起きていることです。業績・資金、成長・営業、組織・リスク、AI・意思決定の20の視点を1つの画面にまとめ、異常が出たら「原因の仮説・放置した場合の損失・推奨する手・決裁者・期限」を付けて、決裁案の形で届けます。
+              </p>
+              <ul>
+                <li>週末の夜に集計し、月曜の朝7時に経営ブリーフが届く</li>
+                <li>AIは下書きまで。承認するのは人。監査の跡が残る設計</li>
+                <li>
+                  作ったものは、すべて貴グループのアカウントの資産になります
+                </li>
+              </ul>
+              <div class="ev">
+                <b class="h">貴グループとの接点</b
+                ><span class="tag-est">当社の推定</span>貴グループは「経営ログ
+                for
+                kintone」を自社で開発しておられます。社内で使い込んだコックピットは、顧問先に勧める商品の実例にもなり得ます。
+              </div>
+            </div>
+            <aside class="spec">
+              <h4>使うサービス</h4>
+              <p class="svc">AI経営コックピット</p>
+              <p class="price">お一人480万円<small>（税別・12か月）</small></p>
+              <dl>
+                <dt>一括払い</dt>
+                <dd>400万円（税別）</dd>
+                <dt>複数名</dt>
+                <dd>2名で10%、3名以上で20%の割引</dd>
+                <dt>形式</dt>
+                <dd>
+                  1〜3か月目は週1回60分×12回のマンツーマン。4〜12か月目は月2回30分。鈴木と橋本の2名が伴走
+                </dd>
+              </dl>
+            </aside>
+          </div>
+
+          <div class="m-row">
+            <div class="m-no">
+              <small>施策</small><b>5</b
+              ><span class="moves">粗利率を動かす</span>
+            </div>
+            <div>
+              <h3>藤間様と経営チームの生産能力を、桁で上げる</h3>
+              <p>
+                現場の効率化は進んでいます。次に差がつくのは、経営者と幹部がご自分の手でAIを使うかどうかです。藤間様には1対1で、幹部の皆さまには4名1組で、1年間伴走します。
+              </p>
+              <ul>
+                <li>
+                  <b>藤間様：</b
+                  >講演・著書・連載の下書きと再利用。「100年企業創り」の考え方と判断の基準を文章に起こし、次の世代がいつでも引ける形にする
+                </li>
+                <li>
+                  <b>幹部4名：</b
+                  >1〜3か月で自分の時間を取り戻す、4〜8か月で部門を仕組みで回す、9〜12か月で経営チームとして決める
+                </li>
+                <li>
+                  題材は毎回、ご本人の実際の仕事。その場で一緒に手を動かします
+                </li>
+              </ul>
+              <div class="ev">
+                <b class="h">当社の実測</b
+                >当社代表1名の生産能力は<strong>15.4人分</strong>。<br /><span
+                  class="note"
+                  >2026年7月29日〜8月5日の1週間。生産能力の実測値であり、成果を保証するものではありません。</span
+                >
+              </div>
+            </div>
+            <aside class="spec">
+              <h4>使うサービス</h4>
+              <p class="svc">生成AI活用顧問（経営者1名）</p>
+              <p class="price">年額240万円<small>（税別）</small></p>
+              <dl>
+                <dt>形式</dt>
+                <dd>
+                  月2回・各30分のZoom（鈴木は月1回、橋本は月2回参加）＋チャットで随時相談
+                </dd>
+              </dl>
+              <hr />
+              <p class="svc">幹部向け強化プラン（幹部4名）</p>
+              <p class="price">月額30万円<small>× 12か月（税別）</small></p>
+              <dl>
+                <dt>形式</dt>
+                <dd>
+                  4名合同で月2回・各60分＋4名それぞれのチャット相談。年額360万円
+                </dd>
+                <dt>条件</dt>
+                <dd>生成AI活用顧問をご利用の企業さま向けの追加プランです</dd>
+              </dl>
+            </aside>
+          </div>
+
+          <h3 class="grp">
+            新しい売上の柱をつくる<small>平均単価を動かす</small>
+          </h3>
+
+          <div class="m-row last">
+            <div class="m-no">
+              <small>施策</small><b>6</b
+              ><span class="moves">平均単価を動かす</span>
+            </div>
+            <div>
+              <h3>顧問先の経営者へ、共同で届ける</h3>
+              <p>
+                貴グループのAI導入支援は、研修から活用ガイドラインの作成、運用までを支えるものと拝見しました。当社の強みは、経営者ご本人と1対1で進める顧問と、経営コックピットの構築です。重なる部分が少なく、組み合わせると顧問先に出せる選択肢が増えます。
+              </p>
+              <ul>
+                <li>ご紹介から始め、手応えを見て共同提供へ進める</li>
+                <li>
+                  当社から持ち込めるもの：経営者向け顧問とコックピットの実行体制、経営者との繋がり35,000人以上のネットワーク、プロ人材約15万人のデータベース
+                </li>
+                <li>
+                  貴グループのセミナーや会報で使える、自社の実測に基づく題材
+                </li>
+              </ul>
+              <div class="ev">
+                <b class="h">規模の目安</b
+                ><span class="tag-est">仮定</span
+                >顧問契約1,200件のうち1%（12社）の経営者が年額240万円の顧問を導入した場合、取扱高は年<strong>2,880万円</strong>。3%なら8,640万円。<br /><span
+                  class="note"
+                  >当社が置いた計算上の値です。導入率と配分は、これからのご相談で決まります。</span
+                >
+              </div>
+            </div>
+            <aside class="spec">
+              <h4>費用</h4>
+              <p class="svc">協業の条件は個別にご相談</p>
+              <dl>
+                <dt>本提案との関係</dt>
+                <dd>
+                  下の費用には含めていません。施策1〜5のどれかで貴グループ自身の数字が出てから形を決める進め方をおすすめします
+                </dd>
+              </dl>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4 -->
+      <section class="ch" id="road">
+        <div class="wrap">
+          <div class="ch-head">
+            <h2>
+              <span class="kicker">進め方</span>中心から外へ、年輪のように広げる
+            </h2>
+            <p>
+              6つを一度に始める必要はありません。経営チームで型をつくり、グループの発信と営業で数字を出し、数字が出た型だけを顧問先へ届けます。
+            </p>
+          </div>
+          <div class="road">
+            <svg
+              class="rings"
+              viewBox="0 0 520 520"
+              role="img"
+              aria-labelledby="ringsTitle ringsDesc"
+            >
+              <title id="ringsTitle">3つの輪</title>
+              <desc id="ringsDesc">
+                中心が藤間様と経営チーム、2つ目の輪がグループの発信と営業、外側の輪が顧問先1,200件以上。中心から外へ順に広げる。
+              </desc>
+              <circle
+                cx="260"
+                cy="260"
+                r="246"
+                fill="#dbe5ef"
+                stroke="#032642"
+                stroke-width="3"
+              />
+              <circle
+                cx="260"
+                cy="260"
+                r="222"
+                fill="none"
+                stroke="#032642"
+                stroke-opacity=".16"
+                stroke-width="2"
+              />
+              <circle
+                cx="260"
+                cy="260"
+                r="196"
+                fill="none"
+                stroke="#032642"
+                stroke-opacity=".16"
+                stroke-width="2"
+              />
+              <circle
+                cx="260"
+                cy="260"
+                r="170"
+                fill="#b4c8dc"
+                stroke="#032642"
+                stroke-width="3"
+              />
+              <circle
+                cx="260"
+                cy="260"
+                r="146"
+                fill="none"
+                stroke="#032642"
+                stroke-opacity=".2"
+                stroke-width="2"
+              />
+              <circle
+                cx="260"
+                cy="260"
+                r="120"
+                fill="none"
+                stroke="#032642"
+                stroke-opacity=".2"
+                stroke-width="2"
+              />
+              <circle cx="260" cy="260" r="92" fill="#032642" />
+              <circle
+                cx="260"
+                cy="260"
+                r="72"
+                fill="none"
+                stroke="#e3b667"
+                stroke-width="2"
+              />
+              <g
+                font-family="'Zen Kaku Gothic New','Hiragino Sans',sans-serif"
+                text-anchor="middle"
+              >
+                <text
+                  x="260"
+                  y="250"
+                  fill="#ffffff"
+                  font-size="20"
+                  font-weight="900"
+                >
+                  藤間様と
+                </text>
+                <text
+                  x="260"
+                  y="278"
+                  fill="#ffffff"
+                  font-size="20"
+                  font-weight="900"
+                >
+                  経営チーム
+                </text>
+                <text
+                  x="260"
+                  y="118"
+                  fill="#032642"
+                  font-size="19"
+                  font-weight="900"
+                >
+                  グループの発信と営業
+                </text>
+                <text
+                  x="260"
+                  y="143"
+                  fill="#032642"
+                  font-size="16"
+                  font-weight="700"
+                >
+                  施策1・2・3
+                </text>
+                <text
+                  x="260"
+                  y="44"
+                  fill="#032642"
+                  font-size="19"
+                  font-weight="900"
+                >
+                  顧問先 1,200件以上
+                </text>
+                <text
+                  x="260"
+                  y="69"
+                  fill="#032642"
+                  font-size="16"
+                  font-weight="700"
+                >
+                  施策6
+                </text>
+                <text
+                  x="260"
+                  y="408"
+                  fill="#032642"
+                  font-size="16"
+                  font-weight="700"
+                >
+                  数字を出す
+                </text>
+                <text
+                  x="260"
+                  y="478"
+                  fill="#032642"
+                  font-size="16"
+                  font-weight="700"
+                >
+                  数字が出た型を届ける
+                </text>
+              </g>
+            </svg>
+            <ol class="phases">
+              <li>
+                <span class="when">1〜3か月目</span>
+                <h3>中心：藤間様と経営チームで型をつくる</h3>
+                <p>
+                  顧問を開始（施策5）。並行して、発信は少数の記事で試し（施策1）、専門分野を1つ選んでAI検索の診断を行う（施策2）。
+                </p>
+                <p class="out">
+                  決まるもの：対象分野・測る数字・社内の確認手順
+                </p>
+              </li>
+              <li>
+                <span class="when">4〜8か月目</span>
+                <h3>2つ目の輪：発信と営業で数字を出す</h3>
+                <p>
+                  発信の本数を増やし、問い合わせ数を毎月測る。分野をまたぐ提案の仕組み（施策3）と経営コックピット（施策4）は、ここで着手を判断する。
+                </p>
+                <p class="out">決まるもの：問い合わせ・提案・受注の実測値</p>
+              </li>
+              <li>
+                <span class="when">9〜12か月目</span>
+                <h3>外の輪：顧問先へ届ける</h3>
+                <p>
+                  社内で数字が出た型を、顧問先向けの題材とサービスにする（施策6）。セミナーでの紹介から始め、共同提供の形を決める。
+                </p>
+                <p class="out">決まるもの：2年目の方針と、協業の形</p>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5 -->
+      <section class="ch cost" id="cost">
+        <div class="wrap">
+          <div class="ch-head">
+            <h2>
+              <span class="kicker">費用</span>3つの始め方と、施策ごとの金額
+            </h2>
+            <p>金額はすべて税別で、当社の定価をそのまま記載しています。</p>
+          </div>
+          <div class="plans">
+            <article class="plan">
+              <h3>A　藤間様お一人から</h3>
+              <p class="for">施策5の一部</p>
+              <p class="total">240<small>万円（税別）</small></p>
+              <p class="calc">年額。生成AI活用顧問（月換算20万円・年間契約）</p>
+              <ul>
+                <li>月2回・各30分のZoom＋チャットで随時相談</li>
+                <li>
+                  発信の試行（施策1）とAI検索の診断（施策2）を、顧問の題材として進められます
+                </li>
+              </ul>
+            </article>
+            <article class="plan rec">
+              <span class="flag">当社のおすすめ</span>
+              <h3>B　経営チームで</h3>
+              <p class="for">施策5のすべて</p>
+              <p class="total">600<small>万円（税別）</small></p>
+              <p class="calc">
+                年額。顧問 240万円 ＋ 幹部向け強化プラン 360万円
+              </p>
+              <ul>
+                <li>藤間様に1対1、幹部4名に合同で、1年間伴走</li>
+                <li>1人あたりに直すと年120万円</li>
+                <li>
+                  売上側の施策（1〜3）を社内で動かす担い手が、この5名から生まれます
+                </li>
+              </ul>
+            </article>
+            <article class="plan">
+              <h3>C　経営の中枢まで</h3>
+              <p class="for">施策4＋施策5</p>
+              <p class="total">1,080<small>万円（税別）</small></p>
+              <p class="calc">
+                初年度。B 600万円 ＋ AI経営コックピット 1名 480万円<br />コックピットを一括払いにすると合計1,000万円
+              </p>
+              <ul>
+                <li>Bに加えて、経営者1名のコックピットを構築</li>
+                <li>経営会議の資料づくりと、異常の発見を仕組みにする</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="menu">
+            <table>
+              <caption>
+                施策ごとの料金（すべて税別）
+              </caption>
+              <tr>
+                <th>
+                  施策1<small>商談数</small>note発信半自動化支援／PR
+                  TIMES配信の半自動化
+                </th>
+                <td>対象分野の数と月あたりの本数で決まります。</td>
+                <td class="yen">個別お見積り</td>
+              </tr>
+              <tr>
+                <th>施策2<small>商談数</small>LLMOアナライザー</th>
+                <td>診断するサイト・分野の数で決まります。</td>
+                <td class="yen">個別お見積り</td>
+              </tr>
+              <tr>
+                <th>施策3<small>受注率・単価</small>AI営業推進室</th>
+                <td>
+                  商談の創出・営業の育成・成果の計測を12か月。施策1・2の内容（記事化・プレスリリース・AI検索対策）を含みます。
+                </td>
+                <td class="yen">月額100万円 × 12か月<br />＝年間1,200万円</td>
+              </tr>
+              <tr>
+                <th>施策4<small>粗利率</small>AI経営コックピット</th>
+                <td>
+                  経営者ご本人と主要幹部が対象。2名で10%、3名以上で20%の割引。
+                </td>
+                <td class="yen">
+                  お一人480万円（12か月）<br />一括払い400万円
+                </td>
+              </tr>
+              <tr>
+                <th>施策5<small>粗利率</small>生成AI活用顧問</th>
+                <td>経営者1名に限定したマンツーマン。</td>
+                <td class="yen">年額240万円</td>
+              </tr>
+              <tr>
+                <th>施策5<small>粗利率</small>幹部向け強化プラン</th>
+                <td>
+                  幹部4名。生成AI活用顧問をご利用の企業さま向けの追加プラン。
+                </td>
+                <td class="yen">月額30万円 × 12か月<br />＝年額360万円</td>
+              </tr>
+              <tr>
+                <th>施策6<small>平均単価</small>顧問先への共同提供</th>
+                <td>ご紹介から始め、共同提供へ。</td>
+                <td class="yen">条件は個別にご相談</td>
+              </tr>
+            </table>
+          </div>
+          <p class="note">
+            生成AIのツール利用料は上の金額に含みません。貴グループがすでにお使いのAI基盤の上で進めることを基本とします。
+          </p>
+        </div>
+      </section>
+
+      <!-- 6 -->
+      <section class="ch" id="roi">
+        <div class="wrap">
+          <div class="ch-head">
+            <h2>
+              <span class="kicker">投資対効果</span>何件の受注で、元が取れるか
+            </h2>
+            <p>
+              <span class="tag-est">仮定</span
+              >貴グループの実数をまだ伺っていないため、効果の金額は約束しません。代わりに「回収に必要な受注の数」を計算できるようにしました。受注1件あたりの粗利を、貴グループの実感に合う数字へ動かしてください。
+            </p>
+          </div>
+          <div class="roi-grid">
+            <div class="panel">
+              <h3>条件を入れる</h3>
+              <div class="field">
+                <label for="plan">始め方</label>
+                <select id="plan">
+                  <option value="6000000">
+                    B　経営チームで（年額600万円）
+                  </option>
+                  <option value="2400000">
+                    A　藤間様お一人から（年額240万円）
+                  </option>
+                  <option value="10800000">
+                    C　経営の中枢まで（年額1,080万円）
+                  </option>
+                  <option value="12000000">
+                    施策3　AI営業推進室（年間1,200万円）
+                  </option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="gp"
+                  >受注1件あたりの年間粗利
+                  <output id="gpOut">50万円</output></label
+                >
+                <input
+                  type="range"
+                  id="gp"
+                  min="30"
+                  max="500"
+                  step="10"
+                  value="50"
+                />
+              </div>
+              <p class="note" style="margin: 18px 0 0">
+                初期値の50万円は、平均単価100万円×粗利率50%という当社の説明用の値です。顧問契約のように毎年続く契約なら、1件あたりの粗利はこれより大きくなります。税別の単純な計算で、効果が出るまでの期間と追加の費用は反映していません。
+              </p>
+            </div>
+            <div>
+              <div class="result" aria-live="polite">
+                <h3>回収に必要な追加の受注</h3>
+                <p class="big">
+                  <span id="deals">12</span><small>件／年</small>
+                </p>
+                <p>
+                  顧問契約1,200件に対して <b id="share">1.0%</b> にあたります。
+                </p>
+                <div class="kv">
+                  <div>
+                    <span>投資額（税別）</span><b id="investTxt">600万円</b>
+                  </div>
+                  <div>
+                    <span>月あたりに直すと</span><b id="perMonth">1.0件</b>
+                  </div>
+                  <div>
+                    <span>その件数で得られる年間の粗利</span
+                    ><b id="year2">600万円</b>
+                  </div>
+                </div>
+              </div>
+              <p class="note" style="margin-top: 14px">
+                この試算は仮定にもとづく計算であり、効果を保証するものではありません。実際の数字は、開始時に決める指標（問い合わせ・提案・受注）を毎月測って確かめます。
+              </p>
+            </div>
+          </div>
+
+          <div class="upside">
+            <table>
+              <caption>
+                施策ごとに、最初に測る数字
+              </caption>
+              <tr>
+                <th>施策1　発信</th>
+                <td>公開した記事の本数と、記事経由の問い合わせ件数</td>
+                <td class="n">件／月</td>
+              </tr>
+              <tr>
+                <th>施策2　AI検索</th>
+                <td>診断の点数（100点満点）の、改善前後の差</td>
+                <td class="n">点</td>
+              </tr>
+              <tr>
+                <th>施策3　提案</th>
+                <td>分野をまたぐ提案の本数、商談化数、受注数</td>
+                <td class="n">件／月</td>
+              </tr>
+              <tr>
+                <th>施策4　コックピット</th>
+                <td>異常の発見から決裁までの日数</td>
+                <td class="n">日</td>
+              </tr>
+              <tr>
+                <th>施策5　経営チーム</th>
+                <td>ご本人が作った成果物の数と、かけた時間</td>
+                <td class="n">件・時間</td>
+              </tr>
+              <tr>
+                <th>施策6　共同提供</th>
+                <td>ご紹介の件数と、導入に至った件数</td>
+                <td class="n">件</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7 -->
+      <section class="ch" id="proof">
+        <div class="wrap">
+          <div class="ch-head">
+            <h2>
+              <span class="kicker">当社の実績</span
+              >人に勧める前に、自社で測っています
+            </h2>
+            <p>
+              当社はAIの使い方を教える会社である前に、社長自身が毎日この方法で経営している会社です。数字はすべて自社資料に記載のもので、時点を添えています。
+            </p>
+          </div>
+          <div class="proof">
+            <article>
+              <b class="num">304<small>社</small></b>
+              <h3>生成AI活用のご支援実績</h3>
+              <p>研修だけで終わらせず、実務への適用まで伴走した社数です。</p>
+              <p class="src">2026年10月31日現在</p>
+            </article>
+            <article>
+              <b class="num">88<small>人</small></b>
+              <h3>経営者向け「生成AI活用顧問」の導入</h3>
+              <p>経営者ご本人と1対1で進める顧問の導入人数です。</p>
+              <p class="src">2026年9月末現在</p>
+            </article>
+            <article>
+              <b class="num">1,852<small>社</small></b>
+              <h3>お取引実績</h3>
+              <p>2007年の設立以来のお取引社数です。</p>
+              <p class="src">2026年9月末現在</p>
+            </article>
+          </div>
+          <div class="self">
+            <article>
+              <b class="num">15.4<small>人分</small></b>
+              <h3>代表1名の、1週間の生産能力</h3>
+              <p>
+                成果物689件。人手換算759.8時間を、実投入49.5時間で割った値です。成果を保証するものではありません。
+              </p>
+              <p class="src">測定：2026年7月29日〜8月5日</p>
+            </article>
+            <article>
+              <b class="num">20<small>件</small></b>
+              <h3>直近1か月の受注</h3>
+              <p>
+                提案・診断資料165本（67社分）から、送付37、商談化26、受注20。
+              </p>
+              <p class="src">2026年7月18日〜8月18日</p>
+            </article>
+            <article>
+              <b class="num">84<small>件</small></b>
+              <h3>記事経由の問い合わせ（2か月）</h3>
+              <p>
+                2か月で215記事を公開。1日あたり約3.5本、1本の平均は約15,000字（概数）。
+              </p>
+              <p class="src">2026年8〜9月</p>
+            </article>
+          </div>
+          <div class="who2">
+            <div>
+              <h3>担当する2名</h3>
+              <p>
+                <b>鈴木 章裕</b
+                >（代表取締役）：7社を創業し4社をEXIT。iU（情報経営イノベーション専門職大学）客員教授。<br /><b
+                  >橋本 剛</b
+                >（CIO）：顧問・コックピットの実装を担当。
+              </p>
+            </div>
+            <div>
+              <h3>株式会社コミクス</h3>
+              <p>
+                設立2007年9月6日、資本金70,840,000円。東京商工会議所
+                正会員、生成AI活用普及協会
+                シニア会員。社内のAI運用基盤は、スキル165・エージェント31・自動実行15本・外部連携9系統（2026年8月18日時点）。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8 -->
+      <section class="ch" id="roles">
+        <div class="wrap">
+          <div class="ch-head">
+            <h2>
+              <span class="kicker">役割分担</span
+              >貴グループの基盤とルールの上で進める
+            </h2>
+            <p>
+              貴グループには、守秘義務を前提に選ばれたAI基盤と、ISO27001の運用があります。当社はそこに新しい道具を持ち込むのではなく、使い道を売上の側へ広げる役を担います。
+            </p>
+          </div>
+          <div class="safe">
+            <article>
+              <h3>顧問先の情報は、外に出さない</h3>
+              <p>
+                発信と営業の施策は、公開済みの情報と貴グループ自身の知見を題材にします。顧問先の財務・契約の情報は、貴グループの既存の環境の中だけで扱います。
+              </p>
+            </article>
+            <article>
+              <h3>専門の記述は、専門家が確かめる</h3>
+              <p>
+                税務・労務・法務に関わる文章は、貴グループの専門家の確認を公開前の必須工程にします。AIは下書きまで、責任を持つのは人です。
+              </p>
+            </article>
+            <article>
+              <h3>既存のサービスと重ねない</h3>
+              <p>
+                貴グループのAI導入支援・kintone関連のサービスと競合する提案はしません。重なりそうな部分は、最初のご相談で線を引きます。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9 -->
+      <section class="ch next" id="next">
+        <div class="wrap">
+          <div class="ch-head">
+            <h2>
+              <span class="kicker">本日のご相談</span>30分で伺いたい、3つのこと
+            </h2>
+            <p>
+              この資料は公開情報だけで作っています。次の3つを伺えれば、施策と費用を貴グループの実情に合わせて作り直します。
+            </p>
+          </div>
+          <ol class="ask">
+            <li>
+              6つのうち、いちばん「それは欲しい」と感じられたのはどれですか<span
+                >そこから始めます。合わないものは外します。</span
+              >
+            </li>
+            <li>
+              新しい顧問契約は、いまどの経路から生まれていますか<span
+                >セミナー、ご紹介、ウェブ。施策1〜3の優先順位が決まります。</span
+              >
+            </li>
+            <li>
+              顧問先から、AIについてどんな相談が来ていますか<span
+                >施策6の入口です。貴グループの既存サービスと重ならない形を一緒に考えます。</span
+              >
+            </li>
+          </ol>
+          <div class="cta">
+            <p>
+              ご関心をお持ちいただけましたら、2回目の30分で対象の施策と測る数字を一緒に決めます。
+            </p>
+            <a class="btn" href="https://comix.eeasy.jp/suzuki/online"
+              >2回目の日程を選ぶ（30分・Zoom）</a
+            >
+          </div>
+          <p class="sign">
+            <b>鈴木章裕</b>株式会社コミクス 代表取締役<br /><a
+              href="https://www.comix.co.jp/"
+              >https://www.comix.co.jp/</a
+            >
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <h2>出典</h2>
+        <ul>
+          <li>
+            貴グループに関する記載：TOMAコンサルタンツグループ公式サイト（2026年11月20日閲覧）
+            https://toma.co.jp/ ／ https://toma.co.jp/company/about/ ／
+            https://toma.co.jp/reason/ ／
+            https://toma.co.jp/service/software-it/ ／ https://toma.co.jp/news/
+          </li>
+          <li>
+            貴グループのAI活用状況：JAPAN AI株式会社
+            プレスリリース「ＴＯＭＡコンサルタンツグループ、JAPAN
+            AI導入でAI活用を全社推進」（2026年9月3日）
+            https://japan-ai.co.jp/news/press/2026/09/260903/
+          </li>
+          <li>
+            当社の実績：「AI支援メニュー一覧」「デジパラ資料」「生産性15.4人分
+            AI経営実測記録」（2026年8月21日）、「note発信半自動化支援」「PR
+            TIMES配信の半自動化」「LLMOアナライザー
+            ご紹介資料」「bondプレミアム詳細」（2026年10月現在）
+          </li>
+          <li>
+            サービスの内容と価格：「AI支援メニュー一覧」「AI経営コックピット
+            提案資料」（2026年11月）、「幹部向け強化 生成AI活用顧問
+            提案書」（2026年11月11日）、「AI営業推進室」
+          </li>
+          <li>
+            粗利の式（年間粗利＝商談数×受注率×平均単価×粗利率）：当社セミナー資料「社長一人で年間粗利6億円稼ぐAI活用の要諦」（2026年8月16日）
+          </li>
+        </ul>
+        <h2>ご留意いただきたいこと</h2>
+        <ul>
+          <li>
+            貴グループの課題と機会に関する記述は、公開情報からの当社の推定です。実際とは異なる可能性があります。
+          </li>
+          <li>
+            「5.1倍」は掛け算の設計例、回収の件数と取扱高は仮定にもとづく計算です。いずれも効果を保証するものではありません。
+          </li>
+          <li>
+            「15.4人分」は当社の生産能力の実測値であり、成果を保証するものではありません。
+          </li>
+          <li>
+            LLMOアナライザーは、AIの回答への掲載や順位を保証するものではありません。
+          </li>
+          <li>価格はすべて税別表記です。生成AIのツール利用料は含みません。</li>
+        </ul>
+        <p>© 2026 株式会社コミクス</p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var $ = function (id) {
+          return document.getElementById(id);
+        };
+        function man(y) {
+          return Math.round(y / 10000).toLocaleString("ja-JP") + "万円";
+        }
+
+        // 売上側の掛け算
+        var mA = $("mA"),
+          mB = $("mB"),
+          mC = $("mC");
+        function mult() {
+          var a = Number(mA.value),
+            b = Number(mB.value),
+            c = Number(mC.value);
+          $("mAo").textContent = a.toFixed(1) + "倍";
+          $("mBo").textContent = b.toFixed(1) + "倍";
+          $("mCo").textContent = c.toFixed(1) + "倍";
+          $("mOut").textContent = (a * b * c).toFixed(1);
+        }
+        [mA, mB, mC].forEach(function (el) {
+          el.addEventListener("input", mult);
+        });
+        mult();
+
+        // 回収に必要な受注
+        var plan = $("plan"),
+          gp = $("gp");
+        function roi() {
+          var invest = Number(plan.value),
+            g = Number(gp.value) * 10000;
+          var deals = Math.ceil(invest / g);
+          $("gpOut").textContent =
+            Number(gp.value).toLocaleString("ja-JP") + "万円";
+          $("deals").textContent = deals;
+          $("share").textContent = ((deals / 1200) * 100).toFixed(1) + "%";
+          $("investTxt").textContent = man(invest);
+          $("perMonth").textContent = (deals / 12).toFixed(1) + "件";
+          $("year2").textContent = man(deals * g);
+        }
+        plan.addEventListener("change", roi);
+        gp.addEventListener("input", roi);
+        roi();
+      })();
+    </script>
+  </body>
+</html>
